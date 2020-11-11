@@ -398,7 +398,7 @@
         {
          "columns":3,
          "firstgid":322,
-         "image":"plancha-96px.png",
+         "image":"plancha.png",
          "imageheight":64,
          "imagewidth":96,
          "margin":0,
@@ -434,8 +434,7 @@
                          "value":true
                         }]
                 }],
-         "tilewidth":32,
-         "transparentcolor":"#ff00ff"
+         "tilewidth":32
         }],
  "tilewidth":32,
  "type":"map",
