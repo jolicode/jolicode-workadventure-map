@@ -31,7 +31,7 @@
                 {
                  "name":"exitSceneUrl",
                  "type":"string",
-                 "value":"..\/elevator\/map.json"
+                 "value":"..\/green\/map.json"
                 }],
          "type":"tilelayer",
          "visible":true,
