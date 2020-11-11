@@ -31,7 +31,7 @@
                 {
                  "name":"exitSceneUrl",
                  "type":"string",
-                 "value":"..\/terrace\/map.json"
+                 "value":"..\/terrace\/map.json#from-green-layer"
                 }],
          "type":"tilelayer",
          "visible":true,
