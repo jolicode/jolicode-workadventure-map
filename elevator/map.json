@@ -10,7 +10,7 @@
  "infinite":false,
  "layers":[
         {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 309, 0, 0, 0, 0, 0, 0],
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 53, 0, 0, 0, 0, 0, 0],
          "height":4,
          "id":4,
          "name":"start",
@@ -22,7 +22,7 @@
          "y":0
         }, 
         {
-         "data":[299, 299, 299, 299, 299, 309, 309, 299, 299, 309, 309, 299, 299, 299, 299, 299],
+         "data":[43, 43, 43, 43, 43, 53, 53, 43, 43, 53, 53, 43, 43, 43, 43, 43],
          "height":4,
          "id":1,
          "name":"floor",
@@ -52,21 +52,8 @@
  "tileheight":32,
  "tilesets":[
         {
-         "columns":16,
-         "firstgid":1,
-         "image":"tilesets_deviant_milkian_1.png",
-         "imageheight":512,
-         "imagewidth":512,
-         "margin":0,
-         "name":"tilesets_deviant_milkian_1",
-         "spacing":0,
-         "tilecount":256,
-         "tileheight":32,
-         "tilewidth":32
-        }, 
-        {
          "columns":8,
-         "firstgid":257,
+         "firstgid":1,
          "image":"floortileset.png",
          "imageheight":256,
          "imagewidth":256,
