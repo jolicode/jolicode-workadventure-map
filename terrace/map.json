@@ -49,7 +49,7 @@
                 {
                  "name":"exitSceneUrl",
                  "type":"string",
-                 "value":"..\/elevator\/map.json"
+                 "value":"..\/office\/map.json"
                 }],
          "type":"tilelayer",
          "visible":true,
