@@ -67,7 +67,7 @@
                 {
                  "name":"exitSceneUrl",
                  "type":"string",
-                 "value":"..\/office\/map.json"
+                 "value":"..\/office\/map.json#start_terrace"
                 }],
          "type":"tilelayer",
          "visible":true,
