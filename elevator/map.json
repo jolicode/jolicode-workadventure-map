@@ -43,8 +43,20 @@
          "visible":true,
          "x":0,
          "y":0
+        }, 
+        {
+         "data":[93, 94, 95, 96, 112, 0, 0, 0, 0, 0, 0, 0, 93, 94, 95, 96],
+         "height":4,
+         "id":5,
+         "name":"override",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":4,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":5,
+ "nextlayerid":6,
  "nextobjectid":1,
  "orientation":"orthogonal",
  "renderorder":"right-down",
@@ -117,6 +129,19 @@
                          "value":true
                         }]
                 }],
+         "tilewidth":32
+        }, 
+        {
+         "columns":8,
+         "firstgid":65,
+         "image":"christmas.png",
+         "imageheight":384,
+         "imagewidth":256,
+         "margin":0,
+         "name":"christmas",
+         "spacing":0,
+         "tilecount":96,
+         "tileheight":32,
          "tilewidth":32
         }],
  "tilewidth":32,
