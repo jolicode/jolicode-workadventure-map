@@ -2,6 +2,21 @@
 
 This is a starter kit to help you build your own map for [WorkAdventure](https://workadventu.re).
 
+## Seasonal themes
+
+Seasonal decorations live in layer groups named `theme-<name>` (`theme-halloween`, `theme-christmas`), hidden by default in Tiled.
+Each layer of a group has the name of the base layer it decorates (`furnitures`, `override`...).
+
+On deploy, the [Castor](https://castor.jolicode.com) task `castor build <theme>` copies the maps into `build/`, merges the
+layers of the selected group into the base layers (a non-empty tile replaces the base tile) and removes the other groups.
+Without any group selected, the map is neutral. The source maps are never modified: run it locally and open
+`build/office/map.json` in Tiled to preview a theme.
+
+- The theme is picked from the current month: Halloween in October, Christmas in December, neutral otherwise.
+- To force a theme: Actions > "Optimize map and deploy" > Run workflow, and choose the theme.
+- To add a theme: create a `theme-<name>` group in Tiled and add its name to the workflow options.
+- To hide a base tile in a theme, put a fully transparent tile on it.
+
 ## Tools you will need
 
 In order to build your own map for WorkAdventure, you need:

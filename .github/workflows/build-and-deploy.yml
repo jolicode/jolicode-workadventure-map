@@ -3,7 +3,27 @@ name: Optimize map and deploy
 on:
   push:
     branches:
-      - master
+      - main
+  # Switch theme by hand: Actions > "Optimize map and deploy" > Run workflow
+  workflow_dispatch:
+    inputs:
+      theme:
+        description: Theme to deploy (auto = picked from the current month)
+        type: choice
+        default: auto
+        options:
+          - auto
+          - neutral
+          - halloween
+          - christmas
+  # Switch theme automatically on the 1st of each month
+  schedule:
+    - cron: '0 5 1 * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
 
@@ -11,29 +31,38 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup castor
+        uses: castor-php/setup-castor@2a495b8c91f00be6768ad8a040ba8634c797d386 # v1.1.0
+
+      # ponytail: a manual choice is not stored, the next push or schedule goes back to "auto"
+      - name: Build with theme
+        env:
+          THEME: ${{ inputs.theme || 'auto' }}
+          CASTOR_GENERATE_STUBS: 0
+        run: castor build "$THEME"
 
       - name: Optimize map
-        uses: thecodingmachine/map-optimizer-action@master
+        uses: thecodingmachine/map-optimizer-action@f6c012183d3a3bbebe7f278a9cd07a1c1a330f2a # master
 
-      - name: Bash
-        run: |
-          ls -al
-          git config --global user.email "coucou@jolicode.com"
-          git config --global user.name "JoliCode"
-          git checkout master
-          git commit -am "Adding files"
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: build
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: . # The folder the action should deploy.
-          BASE_BRANCH: master
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
 
       - name: Bash2
         run: |
