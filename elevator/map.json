@@ -45,7 +45,7 @@
          "y":0
         }, 
         {
-         "data":[93, 94, 95, 96, 112, 0, 0, 0, 0, 0, 0, 0, 93, 94, 95, 96],
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":4,
          "id":5,
          "name":"override",
@@ -55,8 +55,30 @@
          "width":4,
          "x":0,
          "y":0
+        }, 
+        {
+         "id":6,
+         "layers":[
+                {
+                 "data":[93, 94, 95, 96, 112, 0, 0, 0, 0, 0, 0, 0, 93, 94, 95, 96],
+                 "height":4,
+                 "id":7,
+                 "name":"override",
+                 "opacity":1,
+                 "type":"tilelayer",
+                 "visible":true,
+                 "width":4,
+                 "x":0,
+                 "y":0
+                }],
+         "name":"theme-christmas",
+         "opacity":1,
+         "type":"group",
+         "visible":false,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":6,
+ "nextlayerid":8,
  "nextobjectid":1,
  "orientation":"orthogonal",
  "renderorder":"right-down",
