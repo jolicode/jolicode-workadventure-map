@@ -17,6 +17,15 @@ Without any group selected, the map is neutral. The source maps are never modifi
 - To add a theme: create a `theme-<name>` group in Tiled and add its name to the workflow options.
 - To hide a base tile in a theme, put a fully transparent tile on it.
 
+## Testing locally
+
+```bash
+castor serve            # builds with the theme of the month, or: castor serve halloween
+```
+
+Then open the URL printed in the terminal. WorkAdventure runs on https://play.workadventu.re and loads the map
+from `localhost` over HTTP, which browsers allow; `router.php` adds the CORS header it requires.
+
 ## Tools you will need
 
 In order to build your own map for WorkAdventure, you need:
