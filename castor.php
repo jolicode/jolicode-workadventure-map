@@ -1,10 +1,12 @@
 <?php
 
 use Castor\Attribute\AsArgument;
+use Castor\Attribute\AsOption;
 use Castor\Attribute\AsTask;
 
 use function Castor\fs;
 use function Castor\io;
+use function Castor\run;
 
 defined('CASTOR_USE_CHDIR') || define('CASTOR_USE_CHDIR', true);
 
@@ -40,6 +42,19 @@ function build(
     }
 
     io()->success("Site built in build/ with theme: {$theme}");
+}
+
+#[AsTask(description: 'Build the site then serve it locally for WorkAdventure (play.workadventu.re can load a localhost map)')]
+function serve(
+    #[AsArgument(description: 'Same as for "build"')]
+    string $theme = 'auto',
+    #[AsOption]
+    int $port = 8080,
+): void
+{
+    build($theme);
+    io()->note("Open https://play.workadventu.re/_/test/localhost:{$port}/office/map.json");
+    run(['php', '-S', "localhost:{$port}", '-t', 'build', 'router.php']);
 }
 
 function theme_pick(int $month): string
