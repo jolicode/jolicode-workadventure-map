@@ -60,7 +60,7 @@
          "id":6,
          "layers":[
                 {
-                 "data":[93, 94, 95, 96, 112, 0, 0, 0, 0, 0, 0, 0, 93, 94, 95, 96],
+                 "data":[161, 162, 163, 164, 112, 0, 0, 0, 0, 0, 0, 0, 161, 162, 163, 164],
                  "height":4,
                  "id":7,
                  "name":"override",
@@ -164,6 +164,20 @@
          "spacing":0,
          "tilecount":96,
          "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "columns":4,
+         "firstgid":161,
+         "image":"../office/christmas-lights-32.png",
+         "imageheight":64,
+         "imagewidth":128,
+         "margin":0,
+         "name":"christmas-lights-32",
+         "spacing":0,
+         "tilecount":8,
+         "tileheight":32,
+         "tiles":[{"animation":[{"duration":700,"tileid":0},{"duration":700,"tileid":4}],"id":0}, {"animation":[{"duration":700,"tileid":5},{"duration":700,"tileid":1}],"id":1}, {"animation":[{"duration":700,"tileid":2},{"duration":700,"tileid":6}],"id":2}, {"animation":[{"duration":700,"tileid":7},{"duration":700,"tileid":3}],"id":3}],
          "tilewidth":32
         }],
  "tilewidth":32,
